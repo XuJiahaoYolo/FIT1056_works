@@ -1,7 +1,7 @@
 # FIT1056 Coursework Repository
 This repository stores my work for **FIT1056 – Introduction to Software Engineering**.  
 I’m keeping everything for the semester in one place, but I’ve separated my personal tasks (PST) from the group project so it’s easier to navigate.
-
+The GitHub URL is https://github.com/XuJiahaoYolo/FIT1056_works
 
 FIT1056_works/
 ├─ individual/ # All personal task submissions
