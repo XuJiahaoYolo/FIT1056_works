@@ -146,3 +146,58 @@ def print_student_card(student_id):
         print(f"Printed student card to {filename}.")
     else:
         print(f"Error: Could not print card, student {student_id} not found.")
+        # --- Main Application Loop ---
+def main():
+    """Main function to run the MSMS application."""
+    load_data() # Load all data from file at startup.
+
+    while True:
+        print("\n===== MSMS v2 (Persistent) =====")
+        print("1. Check-in Student")
+        print("2. Print Student Card")
+        print("3. Update Teacher Info")
+        print("4. Remove Student")
+        print("q. Quit and Save")
+        
+        choice = input("Enter your choice: ")
+        
+        made_change = False # A flag to track if we need to save
+        if choice == '1':
+            # TODO: Get student_id and course_id from user, then call check_in().
+            sid = int(input("Student ID: "))
+            cid = input("Course ID: ")
+            changed = check_in(sid, cid)
+            made_change = True
+        elif choice == '2':
+            # TODO: Get student_id, then call print_student_card().
+            sid = int(input("Student ID: "))
+            print_student_card(sid) # No change made, so no save needed
+        elif choice == '3':
+            # TODO: Get teacher_id and new details, then call update_teacher().
+            # Example: update_teacher(1, speciality="Advanced Piano")
+            tid = int(input("Teacher ID: "))
+            name = input("New Name (Enter to skip): ").strip()
+            spec = input("New Speciality (Enter to skip): ").strip()
+            fields = {k: v for k, v in {"name": name, "speciality": spec}.items() if v}
+            if fields:
+                changed = update_teacher(tid, **fields)
+            made_change = True
+        elif choice == '4':
+            # TODO: Get student_id, then call remove_student().
+            sid = int(input("Student ID: "))
+            changed = remove_student(sid)
+            made_change = True
+        elif choice.lower() == 'q':
+            print("Saving final changes and exiting.")
+            break
+        else:
+            print("Invalid choice.")
+            
+        if made_change:
+            save_data() # Save the data immediately after any change.
+
+    save_data() # One final save on exit.
+
+# --- Program Start ---
+if __name__ == "__main__":
+    main()
