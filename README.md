@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Music School Management System (MSMS)
 This project is a GUI-based management system for a music school, built with Python and Streamlit. It simplifies tasks like student registration, course scheduling, and daily lesson check-ins.
 🚀 Quick Start
@@ -48,3 +49,35 @@ bash
 python -m venv venv
 source venv/Scripts/activate  # Windows: venv\Scripts\activate
 pip install streamlit pandas
+=======
+# MSMS v2 (Persistent)
+
+## Description
+This is a simple Python-based Music School Management System (MSMS) that stores data persistently.  
+It allows you to manage students, teachers, and attendance records with basic operations.
+
+## Features
+- **Check-in Student**: Record a student's attendance for a course.
+- **Print Student Card**: Generate a text file with student details.
+- **Update Teacher Info**: Modify teacher name or speciality.
+- **Remove Student**: Delete a student from the system.
+- **Persistent Storage**: Data is saved and loaded automatically.
+
+## How to Run
+1. Make sure you have **Python 3** installed.
+2. Place all source files in the same folder.
+3. Open a terminal in the project folder.
+4. Run:
+   ```bash
+   python pst2_main.py
+   ```
+
+## File Structure
+- `pst2_main.py` – Main program file with menu and functions.
+- `data.json` – Stores all persistent data (students, teachers, attendance).
+- `README.md` – Project instructions.
+
+## Notes
+- All data changes are saved automatically after each operation.
+- If a record is not found, the program will display an error message.
+>>>>>>> 26695019b64377132732ab1397bec5b8ba6afe69
